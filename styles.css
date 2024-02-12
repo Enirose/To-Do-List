@@ -93,3 +93,10 @@ ul li.checked {
 ul li.checked::before {
     background-image: url(images/check-box.png); 
 }
+
+.error {
+    color: red;
+    font: 17px;
+    display: none;
+}
+
