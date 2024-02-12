@@ -33,7 +33,7 @@
     height: 3rem;
 }
 
-.addBtn {
+.row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,4 +61,35 @@ button {
     font-size: 16px;
     cursor: pointer;
     border-radius: 40px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/square.png);
+    background-size: cover;
+    background-position: center;
+    top: 8px;
+    left: 8px;
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+    text-decoration-color: #ff5945;
+}
+ul li.checked::before {
+    background-image: url(images/check-box.png); 
 }
