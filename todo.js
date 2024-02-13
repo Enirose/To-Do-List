@@ -3,7 +3,6 @@ const listContainer = document.querySelector("#list-container");
 const inputError = document.querySelector("#input-error");
 
 function addTask () {
-    showTask();
     //if the input box is empty, we display the error message
     if (inputBox.value === ""){
         inputError.style.display = "block";
