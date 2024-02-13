@@ -3,6 +3,7 @@ const listContainer = document.querySelector("#list-container");
 const inputError = document.querySelector("#input-error");
 
 function addTask () {
+    showTask();
     //if the input box is empty, we display the error message
     if (inputBox.value === ""){
         inputError.style.display = "block";
@@ -25,6 +26,7 @@ function addTask () {
     }
     //automatically remove the the text/input value after adding it to the list created
     inputBox.value = "";
+    saveTask();
 }
 
 //add javascript for click function
@@ -35,9 +37,20 @@ listContainer.addEventListener('click', function(e) {
     //otherwise if you clicked again, once the checked is display, it will be back to unchecked since we added toggle 
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
+        saveTask();
     }
     //if the click target is SPAN. It will delete the parentElement which is li that we created
     else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
+        saveTask();
     }
 }, false);
+
+function saveTask() {
+    localStorage.setItem('data', listContainer.innerHTML);
+}
+
+function showTask() {
+    listContainer.innerHTML = localStorage.getItem('data');
+}
+showTask();
