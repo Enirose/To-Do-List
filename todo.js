@@ -46,6 +46,7 @@ listContainer.addEventListener('click', function(e) {
     }
 }, false);
 
+//Added localStorage to keep store the data
 function saveTask() {
     localStorage.setItem('data', listContainer.innerHTML);
 }
