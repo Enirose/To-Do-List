@@ -23,6 +23,21 @@ function addTask () {
         //displaying the cross icon(span) in li Html element
         li.appendChild(span);
     }
-    //remove the the text/input value after adding
+    //automatically remove the the text/input value after adding it to the list created
     inputBox.value = "";
 }
+
+//add javascript for click function
+//if whenever we click the listContainer where it all stored the task
+listContainer.addEventListener('click', function(e) {
+    //a function is created to check if what we clicked
+    //it will check if we click li, it will display the checked icon and unline
+    //otherwise if you clicked again, once the checked is display, it will be back to unchecked since we added toggle 
+    if(e.target.tagName === "LI"){
+        e.target.classList.toggle("checked");
+    }
+    //if the click target is SPAN. It will delete the parentElement which is li that we created
+    else if (e.target.tagName === "SPAN") {
+        e.target.parentElement.remove();
+    }
+}, false);
