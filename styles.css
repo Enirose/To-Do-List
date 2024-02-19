@@ -55,7 +55,7 @@ input {
 button {
     border: none;
     outline: none;
-    padding: 16px 40px;
+    padding: 16px 50px;
     background: #ff5945;
     color: #FFFF;
     font-size: 16px;
@@ -117,4 +117,21 @@ ul li span {
 
 ul li span:hover {
     background: #edeef0;
+}
+
+
+@media screen and (max-width: 350px){
+   .row {
+    padding-left: 0;
+   }
+
+   button {
+    padding: 10px 25px;
+   }
+}
+
+@media (min-width: 360px) and (max-width: 400px) {
+    button {
+        padding: 16px 35px;
+    }
 }
